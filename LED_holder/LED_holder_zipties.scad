@@ -13,7 +13,7 @@ difference() {
       cylinder(h=0.5,d=inner_ring_diameter,$fn=60);
     }
 
-    cylinder(h=5.8, d2=ring_diameter-12.5, d1=16.25*2,$fn=60);
+    #cylinder(h=5.8, d2=ring_diameter-13, d1=17*2,$fn=60);
     
     
 //cablecuttings
@@ -31,8 +31,8 @@ for (i=[1:3])
 translate([0,0,5.2]) 
 intersection(){ 
 difference() {
-  cylinder(h=4,d=inner_ring_diameter,$fn=100);
-  cylinder(h=4,d=inner_ring_diameter-connector_width,$fn=100);
+  cylinder(h=5,d=inner_ring_diameter,$fn=100);
+  cylinder(h=5,d=inner_ring_diameter-connector_width,$fn=100);
 
 }
 
@@ -41,9 +41,9 @@ difference() {
     rotate([0,0,15])
       cube([5,11,5],$fn=100);
 
-  translate([(inner_ring_diameter/2)-4,0,-2]) 
+  translate([(inner_ring_diameter/2)-4,0,-2.2])
     rotate([0,0,15])
-      cube([5,8,4.75],$fn=100);
+      cube([5,7,4.75],$fn=100);
  }
 }
 
