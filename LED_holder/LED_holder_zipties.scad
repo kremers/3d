@@ -13,16 +13,22 @@ difference() {
       cylinder(h=0.5,d=inner_ring_diameter,$fn=60);
     }
 
-    #cylinder(h=5.8, d2=ring_diameter-13, d1=17*2,$fn=60);
+    union() {
+    cylinder(h=5.8, d2=ring_diameter-13, d1=17*2,$fn=60);
+    translate([0,0,-5]) 
+      cylinder(h=20, d2=17*2, d1=17*2,$fn=60);
+    }
     
+    translate([-35.5/2,-35.5/2,0]) 
+          cube([35.5,35.5,1.3]);
     
 //cablecuttings
 translate([10,30,0.5]) 
   rotate([90,0,0])
-    cylinder(h=14,d=5,$fn=100);
+    cylinder(h=14,d=3,$fn=100);
 translate([-10,-16,0.5]) 
   rotate([90,0,0])
-    cylinder(h=14,d=5,$fn=100);
+    cylinder(h=14,d=3,$fn=100);
 }
 
 /* stecker */
@@ -51,8 +57,16 @@ difference() {
 
 difference() {
 difference() {
-  cylinder(h=4.2, d=58, $fn=60);
-  cylinder(h=5.2, d=ring_diameter, $fn=60);
+  translate([-58/2,-58/2,0]) 
+    cube([58,58,5.2]);
+
+    union() {
+    cylinder(h=5.8, d2=ring_diameter-13, d1=17*2,$fn=60);
+    translate([0,0,-5]) 
+      cylinder(h=20, d2=17*2, d1=17*2,$fn=60);
+     
+    }
+
 }
 
 
@@ -65,14 +79,13 @@ difference() {
     }
 
 
-//cablecuttings
 translate([10,30,0.5]) 
   rotate([90,0,0])
-    cylinder(h=20,d=3,$fn=100);
-translate([-10,-10,0.5]) 
+    cylinder(h=14,d=3,$fn=100);
+translate([-10,-16,0.5]) 
   rotate([90,0,0])
-    cylinder(h=20,d=3,$fn=100);
+    cylinder(h=14,d=3,$fn=100);
 
+    translate([-35.5/2,-35.5/2,0]) 
+          cube([35.5,35.5,1.3]);
 }
-
-
